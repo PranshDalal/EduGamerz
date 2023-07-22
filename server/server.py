@@ -10,7 +10,7 @@ current_player = 'X'
 
 questions = {
     "What color is the sky?": "blue",
-    "What is 2 + 2?": "4",
+    "What is 2 + 2?": "four",
     "What is the capital of France?": "paris"
 }
 
@@ -108,7 +108,7 @@ crossword_data = {
     "grid": [
         ["", "", "", "", "", ""],
         ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
+        ["", "", "", "", "", ""],            
         ["", "", "", "", "", ""],
         ["", "", "", "", "", ""],
         ["", "", "", "", "", ""],

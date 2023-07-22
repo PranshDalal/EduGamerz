@@ -8,6 +8,9 @@ function HangmanGame() {
   const [incorrectGuesses, setIncorrectGuesses] = useState(0);
   const [guess, setGuess] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
+  const [question, setQuestion] = useState('');
+
+  
 
   useEffect(() => {
     startNewGame();
@@ -19,6 +22,7 @@ function HangmanGame() {
     setIncorrectGuesses(0);
     setGuess('');
     setResponseMessage('');
+    setQuestion('');
 
     fetch("http://localhost:5000/api/hangman/start")
       .then(res => res.json())
@@ -26,6 +30,12 @@ function HangmanGame() {
         setHangmanWordState(data.hangman_word_state);
       })
       .catch(error => console.error('Error starting new game:', error));
+
+    fetch("http://localhost:5000/api/hangman/start_with_question")
+      .then(res => res.json())
+      .then(data => {
+        setQuestion(data.question);
+      })
   };
 
   const handleGuess = () => {
@@ -73,6 +83,10 @@ function HangmanGame() {
     <div className="hangman-container">
       <h1 className="header">Hangman</h1>
       <BackButton />
+      {}
+      <div className="hangman-question">
+        <p>{question}</p>
+      </div>
       <div className="hangman-figure">
         {hangmanFigure.map((line, index) => (
           <div key={index}>{line}</div>
