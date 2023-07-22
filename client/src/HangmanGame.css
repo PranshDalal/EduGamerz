@@ -1,0 +1,50 @@
+.hangman-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hangman-figure {
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .hangman-word {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hangman-letter {
+    margin-right: 5px;
+  }
+  
+  .hangman-input {
+    margin-bottom: 20px;
+  }
+  
+  .submit-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-left: 10px;
+  }
+  
+  .response-message {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .new-game-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  
