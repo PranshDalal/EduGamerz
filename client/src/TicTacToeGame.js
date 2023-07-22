@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './TicTacToeGame.css'; // Add the CSS file for the Tic Tac Toe game
+import './TicTacToeGame.css'; 
 
 function TicTacToeGame() {
   const [data, setData] = useState(null);
   const [answer, setAnswer] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
   const [selectedBox, setSelectedBox] = useState(-1);
-  const [showInstructions, setShowInstructions] = useState(false); // State to control the visibility of the instructions
+  const [showInstructions, setShowInstructions] = useState(false); 
 
   useEffect(() => {
     fetchData();
@@ -38,7 +38,7 @@ function TicTacToeGame() {
         setData(data);
         setResponseMessage(data.message);
         setAnswer('');
-        setSelectedBox(-1); // Reset selected box after answering the question
+        setSelectedBox(-1); 
       })
       .catch(error => console.error('Error submitting answer:', error));
   };
@@ -59,7 +59,7 @@ function TicTacToeGame() {
         .then(res => res.json())
         .then(data => {
           setData(data);
-          setSelectedBox(-1); // Reset selected box after placing X
+          setSelectedBox(-1); 
         })
         .catch(error => console.error('Error updating Tic Tac Toe board:', error));
     }

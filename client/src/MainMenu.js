@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom if using routing
-import './MainMenu.css'; // Add the CSS file for the Main Menu
+import { Link } from 'react-router-dom'; 
+import './MainMenu.css';
 
 function MainMenu() {
   return (
@@ -10,7 +10,7 @@ function MainMenu() {
         <li>
           <Link to="/tic-tac-toe">Tic Tac Toe</Link>
         </li>
-        {/* Add more menu items for other games */}
+        {}
       </ul>
     </div>
   );
