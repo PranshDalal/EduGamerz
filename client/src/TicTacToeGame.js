@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './TicTacToeGame.css';
+import BackButton from './BackButton';
 
 function TicTacToeGame() {
   const [data, setData] = useState(null);
@@ -88,6 +89,7 @@ function TicTacToeGame() {
           <p>The first player to get three Xs or Os in a row (horizontally, vertically, or diagonally) wins the game.</p>
         </div>
       )}
+      <BackButton />
       {data ? (
         <div className="game-container">
           <div className="game-info">

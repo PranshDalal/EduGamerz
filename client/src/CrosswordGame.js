@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CrosswordGame.css';
+import BackButton from './BackButton';
 
 function CrosswordGame() {
   const [data, setData] = useState(null);
@@ -58,6 +59,7 @@ function CrosswordGame() {
   return (
     <div className="crossword-container">
       <h1 className="header">Crossword Puzzle</h1>
+      <BackButton />
       {data ? (
         <div className="crossword-game">
           <div className="crossword-grid">
