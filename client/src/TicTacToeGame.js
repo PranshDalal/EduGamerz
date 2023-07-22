@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import './TicTacToeGame.css'; 
+import './TicTacToeGame.css';
 
 function TicTacToeGame() {
   const [data, setData] = useState(null);
   const [answer, setAnswer] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
   const [selectedBox, setSelectedBox] = useState(-1);
-  const [showInstructions, setShowInstructions] = useState(false); 
+  const [showInstructions, setShowInstructions] = useState(false);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = () => {
-    fetch("http://localhost:5000/api/response")
+    fetch("http://localhost:5000/api/tictactoe/response")
       .then(res => res.json())
       .then(data => {
         setData(data);
@@ -23,7 +23,7 @@ function TicTacToeGame() {
   };
 
   const handleAnswerSubmit = () => {
-    fetch("http://localhost:5000/api/response", {
+    fetch("http://localhost:5000/api/tictactoe/response", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -38,14 +38,14 @@ function TicTacToeGame() {
         setData(data);
         setResponseMessage(data.message);
         setAnswer('');
-        setSelectedBox(-1); 
+        setSelectedBox(-1);
       })
       .catch(error => console.error('Error submitting answer:', error));
   };
 
   const handleBoxSelection = () => {
     if (selectedBox !== -1) {
-      fetch("http://localhost:5000/api/response", {
+      fetch("http://localhost:5000/api/tictactoe/response", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ function TicTacToeGame() {
         .then(res => res.json())
         .then(data => {
           setData(data);
-          setSelectedBox(-1); 
+          setSelectedBox(-1);
         })
         .catch(error => console.error('Error updating Tic Tac Toe board:', error));
     }
@@ -83,7 +83,7 @@ function TicTacToeGame() {
         <div className="instructions">
           <h3>How to Play</h3>
           <p>Answer the question to place your X or O.</p>
-          <p>After answering a question, an X will be randomly place on the board.</p>
+          <p>After answering a question, an X will be randomly placed on the board.</p>
           <p>The computer (O) will take its turn automatically.</p>
           <p>The first player to get three Xs or Os in a row (horizontally, vertically, or diagonally) wins the game.</p>
         </div>

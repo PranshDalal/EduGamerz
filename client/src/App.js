@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainMenu from './MainMenu';
-import TicTacToeGame from './TicTacToeGame'; // Import the Tic Tac Toe game component
+import TicTacToeGame from './TicTacToeGame'; 
+import CrosswordGame from './CrosswordGame';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainMenu />} />
           <Route path="/tic-tac-toe" element={<TicTacToeGame />} />
-          {/* Add more routes for other games */}
+          <Route path="/crossword" element={<CrosswordGame />} />
         </Routes>
       </div>
     </Router>

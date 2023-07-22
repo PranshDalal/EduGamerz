@@ -9,6 +9,7 @@ function MainMenu() {
       <ul>
         <li>
           <Link to="/tic-tac-toe">Tic Tac Toe</Link>
+          <Link to="/crossword">Crossword Puzzle</Link>
         </li>
         {}
       </ul>
