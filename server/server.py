@@ -16,9 +16,21 @@ questions = {
 
 current_question = None
 
-
 def check_win(player):
-    pass
+    for i in range(0, 9, 3):
+        if board[i] == board[i + 1] == board[i + 2] == player:
+            return True
+
+    for i in range(3):
+        if board[i] == board[i + 3] == board[i + 6] == player:
+            return True
+
+    if board[0] == board[4] == board[8] == player:
+        return True
+    if board[2] == board[4] == board[6] == player:
+        return True
+
+    return False
 
 
 def is_board_full():
