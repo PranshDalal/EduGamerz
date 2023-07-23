@@ -9,8 +9,7 @@ function HangmanGame() {
   const [guess, setGuess] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
   const [question, setQuestion] = useState('');
-
-  
+  const [showInstructions, setShowInstructions] = useState(false);
 
   useEffect(() => {
     startNewGame();
@@ -36,6 +35,10 @@ function HangmanGame() {
       .then(data => {
         setQuestion(data.question);
       })
+  };
+
+  const toggleInstructions = () => {
+    setShowInstructions(prevState => !prevState);
   };
 
   const handleGuess = () => {
@@ -82,6 +85,16 @@ function HangmanGame() {
   return (
     <div className="hangman-container">
       <h1 className="header">Hangman</h1>
+      <button className="how-to-play-btn" onClick={toggleInstructions}>How to Play</button>
+      {showInstructions && (
+        <div className="instructions">
+          <h3>How to Play</h3>
+          <p>Answer the question to place your X or O.</p>
+          <p>After answering a question, an X will be randomly placed on the board.</p>
+          <p>The computer (O) will take its turn automatically.</p>
+          <p>The first player to get three Xs or Os in a row (horizontally, vertically, or diagonally) wins the game.</p>
+        </div>
+      )}
       <BackButton />
       <div className="hangman-question">
         <p>{question}</p>
@@ -116,7 +129,6 @@ function HangmanGame() {
       )}
     </div>
   );
-  
 }
 
 export default HangmanGame;

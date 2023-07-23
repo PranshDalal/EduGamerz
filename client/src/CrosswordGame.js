@@ -5,6 +5,7 @@ import BackButton from './BackButton';
 function CrosswordGame() {
   const [data, setData] = useState(null);
   const [responseMessage, setResponseMessage] = useState('');
+  const [showInstructions, setShowInstructions] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -56,12 +57,26 @@ function CrosswordGame() {
     }
   };
 
+  const toggleInstructions = () => {
+    setShowInstructions(prevState => !prevState);
+  };
+
   return (
     <div className="crossword-container">
       <h1 className="header">Crossword Puzzle</h1>
       <BackButton />
       {data ? (
         <div className="crossword-game">
+          <button className="how-to-play-btn" onClick={toggleInstructions}>How to Play</button>
+        {showInstructions && (
+          <div className="instructions">
+            <h3>How to Play</h3>
+            <p>Answer the question to place your X or O.</p>
+            <p>After answering a question, an X will be randomly placed on the board.</p>
+            <p>The computer (O) will take its turn automatically.</p>
+            <p>The first player to get three Xs or Os in a row (horizontally, vertically, or diagonally) wins the game.</p>
+          </div>
+        )}
           <div className="crossword-grid">
             {data.grid.map((row, rowIndex) => (
               <div key={rowIndex} className="grid-row">
