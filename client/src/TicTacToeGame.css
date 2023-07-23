@@ -1,24 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f1f1f1;
-  }
-  
-  .header {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.header {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
 .how-to-play-btn {
   padding: 10px 20px;
   font-size: 18px;
@@ -52,69 +52,77 @@ body {
 .instructions p {
   margin-bottom: 10px;
 }
-  .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .game-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .question {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .submit-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .response-message {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .board {
-    display: grid;
-    grid-template-columns: repeat(3, 50px);
-    grid-gap: 4px;
-    margin-top: 20px;
-  }
-  
-  .cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    font-size: 1.5rem;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    cursor: pointer;
-  }
-  
-  
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.response-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-gap: 4px;
+  margin-top: 20px;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-size: 1.5rem;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.cell.filled {
+  background-color: #007bff;
+  color: #fff;
+}
