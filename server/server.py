@@ -216,9 +216,6 @@ def start_game_with_question():
 
     return jsonify({"message": "New game started with a question.", "question": question, "hangman_word_state": hangman_word_state})
 
-
-
-
 @app.route("/api/hangman/guess", methods=['POST'])
 def guess():
     global hangman_word, hangman_word_state, hangman_figure, incorrect_guesses
@@ -244,6 +241,6 @@ def guess():
             return jsonify({"message": "Game over. You lost!", "hangman_word": hangman_word, "hangman_word_state": hangman_word_state, "hangman_figure": hangman_figure}), 200
         else:
             return jsonify({"message": "Incorrect guess!", "hangman_word_state": hangman_word_state, "hangman_figure": hangman_figure[:incorrect_guesses + 1]}), 200
-
+        
 if __name__ == "__main__":
     app.run(debug=True)
