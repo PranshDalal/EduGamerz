@@ -1,10 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './BackButton.css';
 
 function BackButton() {
+  const handleGoBack = () => {
+    window.history.back();
+  };
+
   return (
-    <Link to="/" className="back-button">Back</Link>
+    <button className="back-button" onClick={handleGoBack}>
+      Back
+    </button>
   );
 }
 

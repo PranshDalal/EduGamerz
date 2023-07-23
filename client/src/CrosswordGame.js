@@ -64,19 +64,21 @@ function CrosswordGame() {
   return (
     <div className="crossword-container">
       <h1 className="header">Crossword Puzzle</h1>
+      <button className="how-to-play-btn" onClick={toggleInstructions}>How to Play</button>
+      {showInstructions && (
+        <div className="instructions">
+          <h3>How to Play</h3>
+          <p>Fill in the grid with words based on the provided clues.</p>
+          <p>Type the answers into the corresponding cells of the crossword.</p>
+          <p>You can navigate between cells using the arrow keys or by clicking on a cell.</p>
+          <p>When you type an answer in a cell, the corresponding clue will be marked with the answer.</p>
+          <p>Keep filling in the crossword until you complete the entire grid.</p>
+          <p>Good luck!</p>
+        </div>
+      )}
       <BackButton />
       {data ? (
         <div className="crossword-game">
-          <button className="how-to-play-btn" onClick={toggleInstructions}>How to Play</button>
-        {showInstructions && (
-          <div className="instructions">
-            <h3>How to Play</h3>
-            <p>Answer the question to place your X or O.</p>
-            <p>After answering a question, an X will be randomly placed on the board.</p>
-            <p>The computer (O) will take its turn automatically.</p>
-            <p>The first player to get three Xs or Os in a row (horizontally, vertically, or diagonally) wins the game.</p>
-          </div>
-        )}
           <div className="crossword-grid">
             {data.grid.map((row, rowIndex) => (
               <div key={rowIndex} className="grid-row">

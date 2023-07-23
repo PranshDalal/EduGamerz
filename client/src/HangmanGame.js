@@ -35,6 +35,7 @@ function HangmanGame() {
       .then(data => {
         setQuestion(data.question);
       })
+      .catch(error => console.error('Error fetching question:', error));
   };
 
   const toggleInstructions = () => {
@@ -89,13 +90,12 @@ function HangmanGame() {
       {showInstructions && (
         <div className="instructions">
           <h3>How to Play</h3>
-          <p>Answer the question to place your X or O.</p>
-          <p>After answering a question, an X will be randomly placed on the board.</p>
-          <p>The computer (O) will take its turn automatically.</p>
-          <p>The first player to get three Xs or Os in a row (horizontally, vertically, or diagonally) wins the game.</p>
+          <p>Guess the word by entering one letter at a time into the input field.</p>
+          <p>You have 6 incorrect guesses before the game is over.</p>
+          <p>Keep guessing until you either complete the word or run out of incorrect guesses.</p>
+          <p>Good luck!</p>
         </div>
       )}
-      <BackButton />
       <div className="hangman-question">
         <p>{question}</p>
       </div>
@@ -127,6 +127,7 @@ function HangmanGame() {
       {incorrectGuesses >= 6 && (
         <button className="new-game-btn" onClick={startNewGame}>Start New Game</button>
       )}
+      <BackButton />
     </div>
   );
 }
