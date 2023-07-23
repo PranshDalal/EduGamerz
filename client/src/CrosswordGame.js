@@ -71,7 +71,7 @@ function CrosswordGame() {
                       key={colIndex}
                       type="text"
                       className="grid-cell input-cell"
-                      value={data.grid[rowIndex][colIndex]}
+                      defaultValue={data.grid[rowIndex][colIndex]}
                       onChange={(event) => handleInputChange(event, rowIndex, colIndex)}
                       onBlur={(event) => handleAnswerSubmit(event, data.clues[`${rowIndex + 1} Down`] || data.clues[`${colIndex + 1} Across`])}
                     />

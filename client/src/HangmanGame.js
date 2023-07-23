@@ -83,7 +83,6 @@ function HangmanGame() {
     <div className="hangman-container">
       <h1 className="header">Hangman</h1>
       <BackButton />
-      {}
       <div className="hangman-question">
         <p>{question}</p>
       </div>
@@ -109,11 +108,15 @@ function HangmanGame() {
         <button className="submit-btn" onClick={handleGuess}>Guess</button>
       </div>
       <p className="response-message">{responseMessage}</p>
+      <div className="hangman-guess-count">
+        <p>Incorrect Guesses: {incorrectGuesses}</p>
+      </div>
       {incorrectGuesses >= 6 && (
         <button className="new-game-btn" onClick={startNewGame}>Start New Game</button>
       )}
     </div>
   );
+  
 }
 
 export default HangmanGame;
