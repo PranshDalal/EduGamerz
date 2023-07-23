@@ -106,26 +106,28 @@ def tictactoe_response():
 
 crossword_data = {
     "grid": [
+        ["", "", "", ""],
+        ["", "", ""],
+        ["", "", "", "", ""],            
+        ["", "", "", "", ""],
         ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],            
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
+        ["", ""],
     ],
     "clues": {
-        "1 Across": "",
-        "1 Down": "",
-        "2 Down": "",
-        "3 Down": "",
-        "4 Down": "",
+        "1 Across": "What color is the sky?",
+        "2 Across": "What is 1 + 1",
+        "3 Across": "What is the capital of France?",
+        "4 Across": "What color is grass?",
+        "5 Across": "What is my name?",
+        "6 Across": "Who will win the hackathon?"
     },
     "answers": {
         "1 Across": None,
-        "1 Down": None,
-        "2 Down": None,
-        "3 Down": None,
-        "4 Down": None,
+        "2 Across": None,
+        "3 Across": None,
+        "4 Across": None,
+        "5 Across": None,
+        "6 Across": None
     },
 }
 
